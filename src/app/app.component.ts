@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from './models/product';
+import { CactusFamily } from './models/cactus-family';
+import { Embroidery } from './models/embroidery';
+import { KnittedAnimal } from './models/knitted-animal';
+import { Type } from './models/product';
 import { ProductService } from './product.service';
 import _ from 'lodash';
 
@@ -9,7 +12,8 @@ import _ from 'lodash';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  products: Product[];
+  products: (CactusFamily | Embroidery | KnittedAnimal)[];
+  type = Type;
 
   constructor(private productService: ProductService) {}
 

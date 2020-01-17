@@ -3,6 +3,20 @@
     <div class="details" fxLayout="column">
       <div fxFlex>
         <p class="description">{{product.description | uppercase}}</p>
+        <ng-container [ngSwitch]="product.type">
+          <ng-container *ngSwitchCase="type.CACTUS_FAMILY">
+            <p>{{product.story}}</p>
+            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="8px">
+              <mat-icon>people</mat-icon><div>{{product.membersCount}}</div>
+            </div>
+          </ng-container>
+          <ng-container *ngSwitchCase="type.EMBROIDERY">
+            <p>{{product.contentDescription}}</p>
+          </ng-container>
+          <ng-container *ngSwitchCase="type.KNITTED_ANIMAL">
+            <div>{{product.animalType}}</div>
+          </ng-container>
+        </ng-container>
       </div>
       <mat-chip-list fxFlex="none"><mat-chip>{{product.price}}HUF</mat-chip></mat-chip-list>
     </div>
