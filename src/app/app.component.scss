@@ -1,0 +1,32 @@
+app-card {
+  margin-bottom: 10px;
+}
+
+.details {
+  height: 100%;
+}
+
+.description {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.67);
+}
+
+mat-icon {
+  color: rgba(0, 0, 0, 0.67);
+}
+
+button {
+  mat-icon {
+    margin-right: 8px;
+  }
+}
+
+sup {
+  font-size: 10px;
+}
+
+.toggle {
+  margin: 10px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.67);
+}

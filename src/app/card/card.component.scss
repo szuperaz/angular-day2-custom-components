@@ -1,0 +1,28 @@
+mat-card {
+  width: 300px;
+
+  mat-card-header {
+    color: white;
+    background-color: #9CCC65;
+    width: calc(100% + 32px);
+    margin-left: -16px;
+    height: calc(100% + 16px);
+    margin-top: -16px;
+    border-radius: 4px 4px 0 0;
+
+    mat-card-title {
+      padding-top: 16px;
+    }
+  }
+
+  mat-card-content {
+    background-color: white;
+    height: 150px;
+  }
+
+  button {
+    mat-icon {
+      margin-right: 8px
+    }
+  }
+}
