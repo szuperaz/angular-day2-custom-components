@@ -1,5 +1,6 @@
 <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="10px">
-  <app-card *ngFor="let product of products" [title]="product.name" [imageUrl]="product.imageUrl">
+  <app-card *ngFor="let product of products" [title]="product.name" [imageUrl]="product.imageUrl"
+            [titleTemplate]="product.isOnSale ? specialHeader : undefined" [titleTemplateCtx]="product.isOnSale ? {title: product.name} : undefined">
     <div class="details" fxLayout="column">
       <div fxFlex>
         <p class="description">{{product.description | uppercase}}</p>
@@ -25,4 +26,8 @@
     </button>
   </app-card>
 </div>
+
+<ng-template #specialHeader let-title="title">
+  <div>{{title | uppercase}}<sup>SALE</sup></div>
+</ng-template>
 

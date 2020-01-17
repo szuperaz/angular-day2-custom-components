@@ -1,6 +1,10 @@
 <mat-card>
   <mat-card-header fxLayout="row" fxLayoutAlign="center center">
-    <mat-card-title>{{title}}</mat-card-title>
+    <mat-card-title>
+      <ng-container *ngIf="titleTemplate; else defaultTitle">
+        <ng-container *ngTemplateOutlet="titleTemplate; context:titleTemplateCtx"></ng-container>
+      </ng-container>
+    </mat-card-title>
   </mat-card-header>
   <img width="300" mat-card-image [src]="imageUrl">
   <mat-card-content>
@@ -13,3 +17,7 @@
     <ng-content select="button"></ng-content>
   </mat-card-actions>
 </mat-card>
+
+<ng-template #defaultTitle>
+  {{title | uppercase}}
+</ng-template>
