@@ -1,0 +1,11 @@
+<div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="10px">
+  <app-card *ngFor="let product of products" [title]="product.name" [imageUrl]="product.imageUrl">
+    <div class="details" fxLayout="column">
+      <div fxFlex>
+        <p class="description">{{product.description | uppercase}}</p>
+      </div>
+      <mat-chip-list fxFlex="none"><mat-chip>{{product.price}}HUF</mat-chip></mat-chip-list>
+    </div>
+  </app-card>
+</div>
+
